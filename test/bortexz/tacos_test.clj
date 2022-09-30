@@ -1,8 +1,8 @@
  (ns bortexz.tacos-test
    (:require [clojure.test :refer [deftest is]]
-             [bortexz.tecniko :as ta]
+             [bortexz.tacos :as ta]
              [clojure.edn :as edn]
-             [bortexz.tecniko.timeseries :as ts]
+             [bortexz.tacos.timeseries :as ts]
              [bortexz.utils.math :as umath]
              [bortexz.graphcom :as g]))
 

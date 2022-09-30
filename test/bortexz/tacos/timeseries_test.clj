@@ -1,6 +1,6 @@
 (ns bortexz.tacos.timeseries-test
-  (:require [clojure.test :refer [deftest testing is are]]
-            [bortexz.tecniko.timeseries :as ts]
+  (:require [clojure.test :refer [deftest testing is]]
+            [bortexz.tacos.timeseries :as ts]
             [clojure.data.avl :as avl]))
 
 (deftest base-ops
