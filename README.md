@@ -7,12 +7,12 @@ Collection of timeseries technical analysis indicators as [graphcom](https://git
 
 ### Clojure CLI/deps.edn
 ```clojure
-io.github.bortexz/graphcom {:mvn/version "0.0.1"}
+io.github.bortexz/graphcom {:mvn/version "0.0.2"}
 ```
 
 ### Leiningen/Boot
 ```clojure
-[io.github.bortexz/graphcom "0.0.1"]
+[io.github.bortexz/graphcom "0.0.2"]
 ```
 
 ## Description

@@ -208,8 +208,7 @@
 
 (defn keep-latest
   "Keeps only `n` latest values of timeseries `coll`. Same as `(create (tail coll n))`, but faster when number of items
-   to be removed is small (currently < 10), as it dissoc's the earliest items instead of creating a new timeseries. 
-   When number of items to remove is >= 10, falls back to `(create (tail coll n))`."
+   to be removed is small (currently < 5), as it dissoc's the earliest items instead of creating a new timeseries."
   [coll n]
   (let [size (count coll)]
     (if (> size n)
