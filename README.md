@@ -1,4 +1,5 @@
 # tacos
+[![Clojars Project](https://img.shields.io/clojars/v/io.github.bortexz/tacos.svg)](https://clojars.org/io.github.bortexz/tacos)[![Cljdoc badge](https://cljdoc.org/badge/io.github.bortexz/tacos)](https://cljdoc.org/d/io.github.bortexz/tacos)
 
 Collection of timeseries technical analysis indicators as [graphcom](https://github.com/bortexz/graphcom) nodes.
 
@@ -48,7 +49,7 @@ Code:
               ema3))
 ```
 
-See the [docs] for the complete list of indicators currently available.
+See the [docs](https://cljdoc.org/d/io.github.bortexz/tacos) for the complete list of indicators currently available.
 
 Jump to the [quick example](./examples/quick_example.clj) to see this library in action.
 
