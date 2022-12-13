@@ -7,12 +7,12 @@ Collection of timeseries technical analysis indicators as [graphcom](https://git
 
 ### Clojure CLI/deps.edn
 ```clojure
-io.github.bortexz/tacos {:mvn/version "0.0.2"}
+io.github.bortexz/tacos {:mvn/version "0.1.0"}
 ```
 
 ### Leiningen/Boot
 ```clojure
-[io.github.bortexz/tacos "0.0.2"]
+[io.github.bortexz/tacos "0.1.0"]
 ```
 
 ## Description

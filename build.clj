@@ -3,7 +3,7 @@
   (:require [org.corfield.build :as bb]))
 
 (def lib 'io.github.bortexz/tacos)
-(def version "0.0.2")
+(def version "0.1.0")
 
 (defn- gha-output
   [k v]

@@ -262,13 +262,32 @@
    - `src`
    
    Opts:
-   - `period`"
+   - `period`
+     
+   Notes:
+   - Assumes that only latest time points are added (either new later timestamp, or replacement of current latest).
+     This should be the case most of the time. For earlier than latest arriving time points, you need to recompute all 
+     from earlier time point to latest for correct results, by specifying them on the timeline.
+   
+   - Keeps an internal summatory to work on log-n (n=size of timeseries) instead of reducing tail all the time."
   [tl {:keys [src] :as sources} {:keys [period]}]
-  (derived
-   tl
-   sources
-   (fn simple-moving-average- [_ {:keys [src]} k]
-     (ts/moving-average src k period))))
+  (let [acc (derived
+             tl
+             sources
+             (fn [x {:keys [src]} k]
+               (let [to-remove (ts/shift src k (- period) {:vf val})
+                     to-add (get src k)
+                     prev-k (ts/shift src k -1 {:vf key})
+                     prev (when prev-k (get x prev-k))
+                     {:keys [sum]} (or prev {:sum 0 :ready? false})]
+                 {:sum (when to-add (+ (or sum 0) to-add (if to-remove (- to-remove) 0)))
+                  :ready? (some? to-remove)})))]
+    (derived
+     tl
+     {:acc acc}
+     (fn [_ {:keys [acc]} k]
+       (let [{:keys [sum ready?]} (get acc k)]
+         (when ready? (/ sum period)))))))
 
 (defn weighted-moving-average
   "Reference:

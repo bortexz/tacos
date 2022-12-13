@@ -137,4 +137,4 @@
 (comment
   ; manual test, with portal and Tradingview
   (tap> (update-vals indicators-vals (fn [i] (into (sorted-map) i))))
-  (tap> (into (sorted-map) (::cci indicators-vals))))
+  (tap> (into (sorted-map) (::ma indicators-vals))))
