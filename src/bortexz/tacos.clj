@@ -783,7 +783,9 @@
      (bc/when-let [price    (get src k)
                    ma       (get ma k)
                    mean-dev (get mean-dev k)
-                   cci-val  (/ (- price ma) (* mean-dev constant-factor))]
+                   cci-val  (if-not (zero? mean-dev) 
+                              (/ (- price ma) (* mean-dev constant-factor))
+                              Double/NaN)]
        (if (Double/isNaN cci-val)
          (get curr (ts/shift src k -1 {:vf key}))
          cci-val)))))
